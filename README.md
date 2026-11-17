@@ -148,18 +148,6 @@ Run the complete PyTest test suite:
 pytest tests -v
 ```
 
----
-
-##  Security & Code Hardening
-
-- **No Secret Leaks**: All configuration is decoupled via environment variables; credentials and `.env` are strictly excluded in `.gitignore`.
-- **Payload Sanitization**: Multi-layer image validation checks both MIME type and binary headers.
-- **DoS Protection**: Max upload payload limit (10MB) enforces memory safety against buffer overflow attempts.
-- **Asynchronous Concurrency**: Heavy matrix computations run via `asyncio.to_thread` to ensure non-blocking event loops.
-- **Cache-Control**: Explicit HTTP headers prevent browser-side stale caching during inspection workflows.
-
----
-
 ## License & Ethical Usage
 
 This project is developed for humanitarian aid, civil structural engineering, and disaster management applications.
