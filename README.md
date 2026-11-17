@@ -11,7 +11,7 @@
 ## Project explanatory video
 
 
-https://github.com/user-attachments/assets/2c299276-5afa-4e27-a7f6-32b19f179cfe
+
 
 
 
