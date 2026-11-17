@@ -1,0 +1,47 @@
+/* Custom Transitions and Modern UI Polish */
+
+/* Verdict Glow Themes */
+.verdict-demolish {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(15, 23, 42, 0.9));
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 10px 35px -10px rgba(239, 68, 68, 0.25);
+}
+
+.verdict-repair {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.9));
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 10px 35px -10px rgba(245, 158, 11, 0.25);
+}
+
+.verdict-safe {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(15, 23, 42, 0.9));
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 10px 35px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Glassmorphism Subtle Frost */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Print Optimization */
+@media print {
+  header, footer, #drop-zone, #samples-container, #analyze-btn, .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .bg-slate-900\/70, .bg-slate-900\/40, .bg-slate-900\/50 {
+    background-color: white !important;
+    border-color: #e2e8f0 !important;
+    color: black !important;
+  }
+  #results-state {
+    display: block !important;
+  }
+}
