@@ -8,6 +8,12 @@
 [![Architecture](https://img.shields.io/badge/Clean%20Architecture-Modular%20Pipeline-blueviolet.svg)](#system-architecture)
 
 ---
+## Project explanatory video
+
+
+https://github.com/user-attachments/assets/2c299276-5afa-4e27-a7f6-32b19f179cfe
+
+
 
 ##  Executive Summary
 
