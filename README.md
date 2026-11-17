@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Executive Summary
+##  Executive Summary
 
 This project delivers an end-to-end computer vision and explainable AI system designed to assess, classify, and triage building structural damage in the Gaza Strip. The pipeline categorizes building images into three actionable tiers:
 
@@ -21,7 +21,7 @@ Built with a **Clean Architecture** approach, the repository features leak-free 
 
 ---
 
-## 🏗️ System Architecture & Engineering Design
+##  System Architecture & Engineering Design
 
 The repository follows clean software design principles with strict separation of concerns:
 
@@ -67,7 +67,7 @@ Building_Damage_Detection/
 
 ---
 
-## 🔬 AI Methodology & Performance
+##  AI Methodology & Performance
 
 ### 1. Zero-Leakage Dataset Partitioning
 The ground truth dataset (177 unique images) was partitioned into strictly disjoint sets using stratified sampling:
@@ -98,7 +98,7 @@ The ground truth dataset (177 unique images) was partitioned into strictly disjo
 
 ---
 
-## 🔍 Explainable AI (Grad-CAM)
+##  Explainable AI (Grad-CAM)
 
 In structural engineering, black-box predictions are unacceptable. The system integrates Grad-CAM to compute visual attribution heatmaps:
 
@@ -108,7 +108,7 @@ In structural engineering, black-box predictions are unacceptable. The system in
 
 ---
 
-## 🚀 Quickstart Guide
+##  Quickstart Guide
 
 ### 1. Prerequisites & Environment Setup
 Clone the repository and install requirements:
@@ -150,7 +150,7 @@ pytest tests -v
 
 ---
 
-## 🔒 Security & Code Hardening
+##  Security & Code Hardening
 
 - **No Secret Leaks**: All configuration is decoupled via environment variables; credentials and `.env` are strictly excluded in `.gitignore`.
 - **Payload Sanitization**: Multi-layer image validation checks both MIME type and binary headers.
@@ -160,6 +160,6 @@ pytest tests -v
 
 ---
 
-## 📄 License & Ethical Usage
+## License & Ethical Usage
 
 This project is developed for humanitarian aid, civil structural engineering, and disaster management applications.
