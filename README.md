@@ -8,8 +8,18 @@
 [![Architecture](https://img.shields.io/badge/Clean%20Architecture-Modular%20Pipeline-blueviolet.svg)](#system-architecture)
 
 ---
+## Project explanatory video
 
-## 📌 Executive Summary
+
+https://github.com/user-attachments/assets/ad3c6dcb-90a9-492a-ab9d-a8c2fe67aa57
+
+
+
+
+
+
+
+##  Executive Summary
 
 This project delivers an end-to-end computer vision and explainable AI system designed to assess, classify, and triage building structural damage in the Gaza Strip. The pipeline categorizes building images into three actionable tiers:
 
@@ -21,7 +31,7 @@ Built with a **Clean Architecture** approach, the repository features leak-free 
 
 ---
 
-## 🏗️ System Architecture & Engineering Design
+##  System Architecture & Engineering Design
 
 The repository follows clean software design principles with strict separation of concerns:
 
@@ -67,7 +77,7 @@ Building_Damage_Detection/
 
 ---
 
-## 🔬 AI Methodology & Performance
+##  AI Methodology & Performance
 
 ### 1. Zero-Leakage Dataset Partitioning
 The ground truth dataset (177 unique images) was partitioned into strictly disjoint sets using stratified sampling:
@@ -98,7 +108,7 @@ The ground truth dataset (177 unique images) was partitioned into strictly disjo
 
 ---
 
-## 🔍 Explainable AI (Grad-CAM)
+##  Explainable AI (Grad-CAM)
 
 In structural engineering, black-box predictions are unacceptable. The system integrates Grad-CAM to compute visual attribution heatmaps:
 
@@ -108,58 +118,6 @@ In structural engineering, black-box predictions are unacceptable. The system in
 
 ---
 
-## 🚀 Quickstart Guide
-
-### 1. Prerequisites & Environment Setup
-Clone the repository and install requirements:
-```bash
-git clone https://github.com/your-username/Gaza-Building-Damage-AI.git
-cd Gaza-Building-Damage-AI
-
-# Create virtual environment (recommended)
-python -m venv venv
-venv\Scripts\activate   # On Linux/macOS: source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 2. Environment Variables Configuration
-Copy the sample environment configuration:
-```bash
-cp .env.example .env
-```
-
-### 3. Run the Web Application
-Launch the production FastAPI server:
-```bash
-python api.py
-```
-Open your browser at **http://localhost:8000** to interact with the modern dashboard.
-
-### 4. Run CLI Inference
-```bash
-python predict.py test_image.jpg
-```
-
-### 5. Execute Automated Tests
-Run the complete PyTest test suite:
-```bash
-pytest tests -v
-```
-
----
-
-## 🔒 Security & Code Hardening
-
-- **No Secret Leaks**: All configuration is decoupled via environment variables; credentials and `.env` are strictly excluded in `.gitignore`.
-- **Payload Sanitization**: Multi-layer image validation checks both MIME type and binary headers.
-- **DoS Protection**: Max upload payload limit (10MB) enforces memory safety against buffer overflow attempts.
-- **Asynchronous Concurrency**: Heavy matrix computations run via `asyncio.to_thread` to ensure non-blocking event loops.
-- **Cache-Control**: Explicit HTTP headers prevent browser-side stale caching during inspection workflows.
-
----
-
-## 📄 License & Ethical Usage
+## License & Ethical Usage
 
 This project is developed for humanitarian aid, civil structural engineering, and disaster management applications.
