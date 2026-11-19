@@ -7,7 +7,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
@@ -20,21 +20,37 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              500: '#0284c7',
-              600: '#0369a1',
-              700: '#075985',
+            surface: {
+              950: '#0c0a09',
+              900: '#1c1917',
+              850: '#231f1d',
+              800: '#292524',
+              700: '#44403c',
+              600: '#57534e',
+              500: '#78716c',
+              400: '#a8a29e',
+              300: '#d6d3d1',
+              200: '#e7e5e4',
+              100: '#f5f5f4',
+            },
+            accent: {
+              50:  '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
             },
             hazard: {
-              safe: '#10b981',
-              repair: '#f59e0b',
-              demolish: '#ef4444'
+              safe:    '#22c55e',
+              repair:  '#eab308',
+              demolish:'#ef4444'
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           }
         }
@@ -42,36 +58,36 @@
     }
   </script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen antialiased flex flex-col selection:bg-sky-500 selection:text-white">
+<body class="bg-surface-950 text-stone-200 min-h-screen antialiased flex flex-col selection:bg-accent-500 selection:text-white">
 
   <!-- Top Navigation Bar -->
-  <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-xl sticky top-0 z-50">
+  <header class="border-b border-surface-800/80 bg-surface-900/80 backdrop-blur-xl sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-sky-500/20 ring-1 ring-white/10">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-600 to-amber-500 flex items-center justify-center shadow-lg shadow-accent-500/25 ring-1 ring-white/10">
           <i data-lucide="building-2" class="w-5 h-5 text-white"></i>
         </div>
         <div>
           <div class="flex items-center space-x-2">
             <span class="font-bold text-lg tracking-tight text-white">Gaza Damage AI</span>
-            <span class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">V2.1 PRO</span>
+            <span class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded-full bg-accent-500/15 text-accent-400 border border-accent-500/25">V2.1 PRO</span>
           </div>
-          <p class="text-xs text-slate-400 hidden sm:block">Structural Integrity & Damage Assessment Platform</p>
+          <p class="text-xs text-stone-500 hidden sm:block">Structural Integrity & Damage Assessment Platform</p>
         </div>
       </div>
 
       <div class="flex items-center space-x-4">
         <!-- Live Status Pill -->
-        <div class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs">
+        <div class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-surface-800/80 border border-surface-700/60 text-xs">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          <span class="text-slate-300 font-medium">Model: <span id="model-name-badge" class="font-mono text-sky-400">Loading...</span></span>
+          <span class="text-stone-400 font-medium">Model: <span id="model-name-badge" class="font-mono text-accent-400">Loading...</span></span>
         </div>
 
         <!-- Documentation link -->
-        <a href="/docs" target="_blank" class="text-xs text-slate-400 hover:text-white transition flex items-center space-x-1.5 bg-slate-800/50 hover:bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700/50">
+        <a href="/docs" target="_blank" class="text-xs text-stone-500 hover:text-white transition flex items-center space-x-1.5 bg-surface-800/60 hover:bg-surface-700 px-3 py-1.5 rounded-lg border border-surface-700/50">
           <i data-lucide="code" class="w-3.5 h-3.5"></i>
           <span>Swagger API</span>
         </a>
@@ -87,8 +103,8 @@
       <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-3">
         <span>Building Structural Integrity Assessment</span>
       </h1>
-      <p class="mt-1.5 text-sm sm:text-base text-slate-400 max-w-3xl">
-        Automated classification of building damage states in the Gaza Strip into <span class="text-emerald-400 font-semibold">Safe</span>, <span class="text-amber-400 font-semibold">Repair</span>, or <span class="text-rose-400 font-semibold">Demolish</span>, enhanced with explainable Grad-CAM activation heatmaps.
+      <p class="mt-1.5 text-sm sm:text-base text-stone-500 max-w-3xl">
+        Automated classification of building damage states in the Gaza Strip into <span class="text-green-400 font-semibold">Safe</span>, <span class="text-yellow-400 font-semibold">Repair</span>, or <span class="text-red-400 font-semibold">Demolish</span>, enhanced with explainable Grad-CAM activation heatmaps.
       </p>
     </div>
 
@@ -99,69 +115,69 @@
       <div class="lg:col-span-5 space-y-6">
 
         <!-- Card: Image Source Selection -->
-        <div class="bg-slate-900/70 border border-slate-800/90 rounded-2xl p-6 shadow-xl backdrop-blur-sm">
+        <div class="bg-surface-900/80 border border-surface-800 rounded-2xl p-6 shadow-xl backdrop-blur-sm">
           <div class="flex items-center justify-between mb-4">
             <h2 class="text-base font-semibold text-white flex items-center gap-2">
-              <i data-lucide="image-plus" class="w-4 h-4 text-sky-400"></i>
+              <i data-lucide="image-plus" class="w-4 h-4 text-accent-400"></i>
               <span>Select Structural Image</span>
             </h2>
-            <button id="clear-image-btn" class="hidden text-xs text-rose-400 hover:text-rose-300 transition flex items-center gap-1">
+            <button id="clear-image-btn" class="hidden text-xs text-red-400 hover:text-red-300 transition flex items-center gap-1">
               <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Clear
             </button>
           </div>
 
           <!-- Drag and Drop Dropzone -->
-          <div id="drop-zone" class="border-2 border-dashed border-slate-700 hover:border-sky-500/80 rounded-xl p-6 text-center cursor-pointer transition-all duration-200 bg-slate-950/40 hover:bg-slate-900/60 group">
+          <div id="drop-zone" class="border-2 border-dashed border-surface-700 hover:border-accent-500/70 rounded-xl p-6 text-center cursor-pointer transition-all duration-200 bg-surface-950/50 hover:bg-surface-900/60 group">
             <input type="file" id="file-input" accept="image/*" class="hidden">
             
             <div id="upload-prompt" class="space-y-3">
-              <div class="w-12 h-12 mx-auto rounded-full bg-slate-800/80 group-hover:bg-sky-500/20 group-hover:text-sky-400 text-slate-400 flex items-center justify-center transition ring-1 ring-white/5">
+              <div class="w-12 h-12 mx-auto rounded-full bg-surface-800/80 group-hover:bg-accent-500/15 group-hover:text-accent-400 text-stone-500 flex items-center justify-center transition ring-1 ring-white/5">
                 <i data-lucide="upload-cloud" class="w-6 h-6"></i>
               </div>
               <div>
-                <p class="text-sm font-medium text-slate-200">
-                  <span class="text-sky-400 underline underline-offset-2">Click to browse</span> or drag & drop image
+                <p class="text-sm font-medium text-stone-300">
+                  <span class="text-accent-400 underline underline-offset-2">Click to browse</span> or drag & drop image
                 </p>
-                <p class="text-xs text-slate-500 mt-1">Supports JPG, PNG, WEBP (Max 10MB)</p>
+                <p class="text-xs text-stone-600 mt-1">Supports JPG, PNG, WEBP (Max 10MB)</p>
               </div>
             </div>
 
             <!-- Image Preview Box -->
-            <div id="preview-container" class="hidden relative rounded-lg overflow-hidden border border-slate-700/60 bg-black">
+            <div id="preview-container" class="hidden relative rounded-lg overflow-hidden border border-surface-700/60 bg-black">
               <img id="image-preview" src="" alt="Building view" class="w-full h-64 object-cover">
               <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-3 text-left">
-                <span id="preview-filename" class="text-xs font-mono text-slate-300 truncate block">image.jpg</span>
+                <span id="preview-filename" class="text-xs font-mono text-stone-400 truncate block">image.jpg</span>
               </div>
             </div>
           </div>
 
           <!-- Action Button -->
-          <button id="analyze-btn" disabled class="mt-4 w-full py-3 px-4 rounded-xl font-semibold text-sm transition-all duration-200 flex items-center justify-center space-x-2 bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700/40">
+          <button id="analyze-btn" disabled class="mt-4 w-full py-3 px-4 rounded-xl font-semibold text-sm transition-all duration-200 flex items-center justify-center space-x-2 bg-surface-800 text-stone-500 cursor-not-allowed border border-surface-700/40">
             <i data-lucide="scan" class="w-4 h-4"></i>
             <span>Run Structural AI Assessment</span>
           </button>
         </div>
 
         <!-- Quick Benchmark Sample Images -->
-        <div class="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-5">
+        <div class="bg-surface-900/60 border border-surface-800/60 rounded-2xl p-5">
           <div class="flex items-center justify-between mb-3">
-            <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
               <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
               <span>Or Test Instant Preset Samples</span>
             </h3>
           </div>
           <div class="grid grid-cols-3 gap-3" id="samples-container">
             <!-- Dynamically populated sample cards -->
-            <div class="animate-pulse bg-slate-800/40 rounded-xl h-24"></div>
-            <div class="animate-pulse bg-slate-800/40 rounded-xl h-24"></div>
-            <div class="animate-pulse bg-slate-800/40 rounded-xl h-24"></div>
+            <div class="animate-pulse bg-surface-800/40 rounded-xl h-24"></div>
+            <div class="animate-pulse bg-surface-800/40 rounded-xl h-24"></div>
+            <div class="animate-pulse bg-surface-800/40 rounded-xl h-24"></div>
           </div>
         </div>
 
         <!-- Methodology Mini-Card -->
-        <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 text-xs text-slate-400 space-y-1.5">
-          <div class="flex items-center text-slate-300 font-semibold gap-1.5">
-            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-sky-400"></i>
+        <div class="p-4 rounded-xl bg-surface-900/50 border border-surface-800/60 text-xs text-stone-500 space-y-1.5">
+          <div class="flex items-center text-stone-300 font-semibold gap-1.5">
+            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-accent-400"></i>
             <span>Engineering Standard Note</span>
           </div>
           <p>
@@ -175,24 +191,24 @@
       <div class="lg:col-span-7 space-y-6">
 
         <!-- Idle Placeholder View -->
-        <div id="idle-state" class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-12 text-center flex flex-col items-center justify-center min-h-[460px]">
-          <div class="w-16 h-16 rounded-2xl bg-slate-800/60 border border-slate-700/60 flex items-center justify-center text-slate-400 mb-4 shadow-inner">
-            <i data-lucide="clipboard-check" class="w-8 h-8 text-slate-500"></i>
+        <div id="idle-state" class="bg-surface-900/50 border border-surface-800 rounded-2xl p-12 text-center flex flex-col items-center justify-center min-h-[460px]">
+          <div class="w-16 h-16 rounded-2xl bg-surface-800/60 border border-surface-700/60 flex items-center justify-center text-stone-500 mb-4 shadow-inner">
+            <i data-lucide="clipboard-check" class="w-8 h-8 text-stone-600"></i>
           </div>
           <h3 class="text-lg font-bold text-white mb-1.5">No Inspection Active</h3>
-          <p class="text-sm text-slate-400 max-w-sm">
+          <p class="text-sm text-stone-500 max-w-sm">
             Upload an image of a building or select one of the test presets on the left to generate the structural damage assessment report.
           </p>
         </div>
 
         <!-- Loading State View -->
-        <div id="loading-state" class="hidden bg-slate-900/70 border border-slate-800 rounded-2xl p-12 text-center flex flex-col items-center justify-center min-h-[460px]">
+        <div id="loading-state" class="hidden bg-surface-900/70 border border-surface-800 rounded-2xl p-12 text-center flex flex-col items-center justify-center min-h-[460px]">
           <div class="relative w-16 h-16 mb-5">
-            <div class="w-16 h-16 rounded-full border-4 border-sky-500/20 border-t-sky-500 animate-spin"></div>
-            <i data-lucide="cpu" class="w-6 h-6 text-sky-400 absolute inset-0 m-auto"></i>
+            <div class="w-16 h-16 rounded-full border-4 border-accent-500/20 border-t-accent-500 animate-spin"></div>
+            <i data-lucide="cpu" class="w-6 h-6 text-accent-400 absolute inset-0 m-auto"></i>
           </div>
           <h3 class="text-lg font-bold text-white mb-1">Analyzing Structural Geometry</h3>
-          <p class="text-sm text-slate-400">Running forward inference and calculating Grad-CAM gradient maps...</p>
+          <p class="text-sm text-stone-500">Running forward inference and calculating Grad-CAM gradient maps...</p>
         </div>
 
         <!-- Results Dashboard View -->
@@ -207,21 +223,21 @@
                   <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white" id="verdict-title">DEMOLISH</h2>
                   <span id="verdict-pill" class="text-xs font-mono font-bold px-3 py-1 rounded-full uppercase">HIGH HAZARD</span>
                 </div>
-                <p id="verdict-summary" class="text-sm text-slate-300 mt-2 max-w-xl"></p>
+                <p id="verdict-summary" class="text-sm text-stone-400 mt-2 max-w-xl"></p>
               </div>
 
               <!-- Confidence Metric Badge -->
               <div class="bg-black/30 backdrop-blur-md px-5 py-4 rounded-xl border border-white/10 text-center min-w-[130px] self-start sm:self-center">
-                <span class="text-xs text-slate-400 font-medium block">AI Confidence</span>
+                <span class="text-xs text-stone-500 font-medium block">AI Confidence</span>
                 <span id="confidence-value" class="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight">98.4%</span>
               </div>
             </div>
           </div>
 
           <!-- Probability Breakdown -->
-          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+          <div class="bg-surface-900/80 border border-surface-800 rounded-2xl p-6">
             <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
-              <i data-lucide="bar-chart-3" class="w-4 h-4 text-sky-400"></i>
+              <i data-lucide="bar-chart-3" class="w-4 h-4 text-accent-400"></i>
               <span>Class Probability Distribution</span>
             </h3>
 
@@ -229,65 +245,65 @@
               <!-- Demolish -->
               <div>
                 <div class="flex justify-between text-xs font-mono mb-1">
-                  <span class="text-rose-400 font-semibold flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-rose-500"></span> Demolish (Total Collapse)
+                  <span class="text-red-400 font-semibold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-red-500"></span> Demolish (Total Collapse)
                   </span>
-                  <span id="prob-demolish" class="text-slate-300 font-bold">0.0%</span>
+                  <span id="prob-demolish" class="text-stone-300 font-bold">0.0%</span>
                 </div>
-                <div class="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden p-0.5">
-                  <div id="bar-demolish" class="h-full bg-gradient-to-r from-rose-500 to-red-600 rounded-full transition-all duration-700" style="width: 0%"></div>
+                <div class="h-2.5 w-full bg-surface-800 rounded-full overflow-hidden p-0.5">
+                  <div id="bar-demolish" class="h-full bg-gradient-to-r from-red-600 to-red-500 rounded-full transition-all duration-700" style="width: 0%"></div>
                 </div>
               </div>
 
               <!-- Repair -->
               <div>
                 <div class="flex justify-between text-xs font-mono mb-1">
-                  <span class="text-amber-400 font-semibold flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-amber-500"></span> Repair (Partial Damage)
+                  <span class="text-yellow-400 font-semibold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-yellow-500"></span> Repair (Partial Damage)
                   </span>
-                  <span id="prob-repair" class="text-slate-300 font-bold">0.0%</span>
+                  <span id="prob-repair" class="text-stone-300 font-bold">0.0%</span>
                 </div>
-                <div class="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden p-0.5">
-                  <div id="bar-repair" class="h-full bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full transition-all duration-700" style="width: 0%"></div>
+                <div class="h-2.5 w-full bg-surface-800 rounded-full overflow-hidden p-0.5">
+                  <div id="bar-repair" class="h-full bg-gradient-to-r from-yellow-500 to-amber-500 rounded-full transition-all duration-700" style="width: 0%"></div>
                 </div>
               </div>
 
               <!-- Safe -->
               <div>
                 <div class="flex justify-between text-xs font-mono mb-1">
-                  <span class="text-emerald-400 font-semibold flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Safe (Apparently Intact)
+                  <span class="text-green-400 font-semibold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span> Safe (Apparently Intact)
                   </span>
-                  <span id="prob-safe" class="text-slate-300 font-bold">0.0%</span>
+                  <span id="prob-safe" class="text-stone-300 font-bold">0.0%</span>
                 </div>
-                <div class="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden p-0.5">
-                  <div id="bar-safe" class="h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full transition-all duration-700" style="width: 0%"></div>
+                <div class="h-2.5 w-full bg-surface-800 rounded-full overflow-hidden p-0.5">
+                  <div id="bar-safe" class="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transition-all duration-700" style="width: 0%"></div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Grad-CAM Explainable AI Inspection Deck -->
-          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+          <div class="bg-surface-900/80 border border-surface-800 rounded-2xl p-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
               <div>
                 <h3 class="text-sm font-semibold text-white flex items-center gap-2">
-                  <i data-lucide="eye" class="w-4 h-4 text-purple-400"></i>
+                  <i data-lucide="eye" class="w-4 h-4 text-amber-400"></i>
                   <span>Explainable AI: Grad-CAM Activation Heatmap</span>
                 </h3>
-                <p class="text-xs text-slate-400 mt-0.5">Reveals the exact structural regions and crack vectors the AI focused on.</p>
+                <p class="text-xs text-stone-500 mt-0.5">Reveals the exact structural regions and crack vectors the AI focused on.</p>
               </div>
 
               <!-- View Switcher -->
-              <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 text-xs">
-                <button id="view-tab-overlay" class="px-3 py-1 rounded-lg bg-sky-600 text-white font-medium transition">Overlay</button>
-                <button id="view-tab-split" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">Side-by-Side</button>
-                <button id="view-tab-heatmap" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white transition">Thermal Map</button>
+              <div class="flex items-center bg-surface-800/80 p-1 rounded-xl border border-surface-700/60 text-xs">
+                <button id="view-tab-overlay" class="px-3 py-1 rounded-lg bg-accent-600 text-white font-medium transition">Overlay</button>
+                <button id="view-tab-split" class="px-3 py-1 rounded-lg text-stone-400 hover:text-white transition">Side-by-Side</button>
+                <button id="view-tab-heatmap" class="px-3 py-1 rounded-lg text-stone-400 hover:text-white transition">Thermal Map</button>
               </div>
             </div>
 
             <!-- Grad-CAM Viewer Display -->
-            <div class="relative rounded-xl overflow-hidden bg-black/60 border border-slate-800 min-h-[300px] flex items-center justify-center">
+            <div class="relative rounded-xl overflow-hidden bg-black/60 border border-surface-800 min-h-[300px] flex items-center justify-center">
               
               <!-- Mode 1: Overlay with Opacity Slider -->
               <div id="display-overlay" class="w-full">
@@ -298,11 +314,11 @@
 
               <!-- Mode 2: Side by Side -->
               <div id="display-split" class="hidden w-full grid grid-cols-2 gap-2 p-2">
-                <div class="relative rounded-lg overflow-hidden border border-slate-800">
+                <div class="relative rounded-lg overflow-hidden border border-surface-800">
                   <img id="split-orig-img" src="" alt="Original" class="w-full h-auto object-cover">
                   <span class="absolute top-2 left-2 bg-black/70 text-[10px] font-mono px-2 py-0.5 rounded text-white">Original View</span>
                 </div>
-                <div class="relative rounded-lg overflow-hidden border border-slate-800">
+                <div class="relative rounded-lg overflow-hidden border border-surface-800">
                   <img id="split-cam-img" src="" alt="Heatmap" class="w-full h-auto object-cover">
                   <span class="absolute top-2 left-2 bg-black/70 text-[10px] font-mono px-2 py-0.5 rounded text-white">Attention Heatmap</span>
                 </div>
@@ -316,7 +332,7 @@
             </div>
 
             <!-- Heatmap Color Scale Key -->
-            <div class="mt-3 flex items-center justify-between text-xs text-slate-400 font-mono">
+            <div class="mt-3 flex items-center justify-between text-xs text-stone-500 font-mono">
               <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> Low Influence (Intact Wall / Sky)</span>
               <div class="h-2 w-32 rounded-full bg-gradient-to-r from-blue-600 via-yellow-400 to-red-600"></div>
               <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span> High Weight (Failure Point)</span>
@@ -324,23 +340,23 @@
           </div>
 
           <!-- Civil Engineering Safety Protocols -->
-          <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+          <div class="bg-surface-900/80 border border-surface-800 rounded-2xl p-6">
             <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-              <i data-lucide="clipboard-list" class="w-4 h-4 text-emerald-400"></i>
+              <i data-lucide="clipboard-list" class="w-4 h-4 text-green-400"></i>
               <span>On-Site Civil Engineering Protocols</span>
             </h3>
-            <ul id="protocols-list" class="space-y-2 text-xs sm:text-sm text-slate-300">
+            <ul id="protocols-list" class="space-y-2 text-xs sm:text-sm text-stone-400">
               <!-- Dynamically populated protocols -->
             </ul>
           </div>
 
           <!-- Bottom Action Buttons -->
           <div class="flex items-center justify-end space-x-3 pt-2">
-            <button onclick="window.print()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 border border-slate-700/60 transition">
+            <button onclick="window.print()" class="px-4 py-2.5 rounded-xl bg-surface-800 hover:bg-surface-700 text-stone-300 text-xs font-semibold flex items-center gap-2 border border-surface-700/60 transition">
               <i data-lucide="printer" class="w-4 h-4"></i>
               <span>Print Inspection Sheet</span>
             </button>
-            <button id="download-json-btn" class="px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-sky-600/20 transition">
+            <button id="download-json-btn" class="px-4 py-2.5 rounded-xl bg-accent-600 hover:bg-accent-500 text-white text-xs font-semibold flex items-center gap-2 shadow-lg shadow-accent-600/20 transition">
               <i data-lucide="download" class="w-4 h-4"></i>
               <span>Export Assessment JSON</span>
             </button>
@@ -355,10 +371,10 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800/60 py-6 mt-12 bg-slate-950/80 text-center text-xs text-slate-500">
+  <footer class="border-t border-surface-800/60 py-6 mt-12 bg-surface-950/80 text-center text-xs text-stone-600">
     <div class="max-w-7xl mx-auto px-4">
       <p>Gaza Building Damage AI Platform • MobileNetV2 Deep Learning & Grad-CAM Interpretability Engine</p>
-      <p class="mt-1 text-slate-600">Built for Humanitarian Engineering, Structural Assessment & Disaster Management</p>
+      <p class="mt-1 text-stone-700">Built for Humanitarian Engineering, Structural Assessment & Disaster Management</p>
     </div>
   </footer>
 

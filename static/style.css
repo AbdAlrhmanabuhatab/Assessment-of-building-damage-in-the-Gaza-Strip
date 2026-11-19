@@ -1,33 +1,64 @@
-/* Custom Transitions and Modern UI Polish */
+/* Gaza Building Damage Assessment AI - Custom Styles */
+/* Color Philosophy: Warm stone/concrete + construction amber accents */
 
-/* Verdict Glow Themes */
+/* ===== Verdict Glow Themes ===== */
 .verdict-demolish {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(15, 23, 42, 0.9));
-  border-color: rgba(239, 68, 68, 0.4);
-  box-shadow: 0 10px 35px -10px rgba(239, 68, 68, 0.25);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(28, 25, 23, 0.95));
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 10px 40px -10px rgba(239, 68, 68, 0.2);
 }
 
 .verdict-repair {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 23, 42, 0.9));
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 10px 35px -10px rgba(245, 158, 11, 0.25);
+  background: linear-gradient(135deg, rgba(234, 179, 8, 0.12), rgba(28, 25, 23, 0.95));
+  border-color: rgba(234, 179, 8, 0.35);
+  box-shadow: 0 10px 40px -10px rgba(234, 179, 8, 0.2);
 }
 
 .verdict-safe {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(15, 23, 42, 0.9));
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 10px 35px -10px rgba(16, 185, 129, 0.25);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(28, 25, 23, 0.95));
+  border-color: rgba(34, 197, 94, 0.35);
+  box-shadow: 0 10px 40px -10px rgba(34, 197, 94, 0.2);
 }
 
-/* Glassmorphism Subtle Frost */
+/* ===== Glassmorphism Panels ===== */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(28, 25, 23, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Print Optimization */
+/* ===== Subtle Warm Gradient Background ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 80% 60% at 10% 10%, rgba(249, 115, 22, 0.04), transparent),
+    radial-gradient(ellipse 60% 50% at 90% 80%, rgba(234, 179, 8, 0.03), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===== Custom Scrollbar (Warm Stone) ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1917;
+}
+::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #57534e;
+}
+
+/* ===== Print Optimization ===== */
 @media print {
   header, footer, #drop-zone, #samples-container, #analyze-btn, .no-print {
     display: none !important;
@@ -36,7 +67,10 @@
     background-color: white !important;
     color: black !important;
   }
-  .bg-slate-900\/70, .bg-slate-900\/40, .bg-slate-900\/50 {
+  body::before {
+    display: none !important;
+  }
+  .bg-surface-900\/80, .bg-surface-900\/70, .bg-surface-900\/60, .bg-surface-900\/50 {
     background-color: white !important;
     border-color: #e2e8f0 !important;
     color: black !important;

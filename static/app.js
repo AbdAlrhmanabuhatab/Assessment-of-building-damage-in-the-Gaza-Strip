@@ -46,7 +46,7 @@ async function fetchSamples() {
     container.innerHTML = "";
     samples.forEach(sample => {
       const card = document.createElement("div");
-      card.className = "group relative rounded-xl overflow-hidden border border-slate-800 hover:border-sky-500/80 cursor-pointer transition-all duration-200 bg-slate-950/60 hover:shadow-lg hover:shadow-sky-500/10";
+      card.className = "group relative rounded-xl overflow-hidden border border-stone-800 hover:border-accent-500/70 cursor-pointer transition-all duration-200 bg-stone-950/60 hover:shadow-lg hover:shadow-accent-500/10";
       
       let badgeColor = "bg-rose-500/80";
       if (sample.category === "Repair") badgeColor = "bg-amber-500/80";
@@ -111,14 +111,14 @@ function setupEventListeners() {
   ["dragenter", "dragover"].forEach(event => {
     dropZone.addEventListener(event, (e) => {
       e.preventDefault();
-      dropZone.classList.add("border-sky-500", "bg-sky-500/10");
+      dropZone.classList.add("border-accent-500", "bg-accent-500/10");
     });
   });
 
   ["dragleave", "drop"].forEach(event => {
     dropZone.addEventListener(event, (e) => {
       e.preventDefault();
-      dropZone.classList.remove("border-sky-500", "bg-sky-500/10");
+      dropZone.classList.remove("border-accent-500", "bg-accent-500/10");
     });
   });
 
@@ -176,7 +176,7 @@ function displayPreview(file) {
 
     analyzeBtn.disabled = false;
     analyzeBtn.classList.remove("bg-slate-800", "text-slate-500", "cursor-not-allowed");
-    analyzeBtn.classList.add("bg-sky-600", "hover:bg-sky-500", "text-white", "shadow-lg", "shadow-sky-500/20");
+    analyzeBtn.classList.add("bg-accent-600", "hover:bg-accent-500", "text-white", "shadow-lg", "shadow-accent-500/20");
   };
   reader.readAsDataURL(file);
 }
@@ -192,7 +192,7 @@ function resetUpload() {
   const analyzeBtn = document.getElementById("analyze-btn");
   analyzeBtn.disabled = true;
   analyzeBtn.classList.add("bg-slate-800", "text-slate-500", "cursor-not-allowed");
-  analyzeBtn.classList.remove("bg-sky-600", "hover:bg-sky-500", "text-white", "shadow-lg", "shadow-sky-500/20");
+  analyzeBtn.classList.remove("bg-accent-600", "hover:bg-accent-500", "text-white", "shadow-lg", "shadow-accent-500/20");
 
   document.getElementById("results-state").classList.add("hidden");
   document.getElementById("loading-state").classList.add("hidden");
@@ -298,9 +298,9 @@ function renderAssessmentResults(data) {
   const protocols = adv.protocols || [];
   protocols.forEach(protocol => {
     const li = document.createElement("li");
-    li.className = "flex items-start gap-2 text-slate-300";
+    li.className = "flex items-start gap-2 text-stone-400";
     li.innerHTML = `
-      <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400 mt-0.5 shrink-0"></i>
+      <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-400 mt-0.5 shrink-0"></i>
       <span>${protocol}</span>
     `;
     protocolsList.appendChild(li);
@@ -324,10 +324,10 @@ function switchGradCamView(viewMode) {
   };
 
   Object.keys(tabs).forEach(k => {
-    tabs[k].className = "px-3 py-1 rounded-lg text-slate-400 hover:text-white transition";
+    tabs[k].className = "px-3 py-1 rounded-lg text-stone-400 hover:text-white transition";
     displays[k].classList.add("hidden");
   });
 
-  tabs[viewMode].className = "px-3 py-1 rounded-lg bg-sky-600 text-white font-medium transition";
+  tabs[viewMode].className = "px-3 py-1 rounded-lg bg-accent-600 text-white font-medium transition";
   displays[viewMode].classList.remove("hidden");
 }
