@@ -118,46 +118,6 @@ In structural engineering, black-box predictions are unacceptable. The system in
 
 ---
 
-##  Quickstart Guide
-
-### 1. Prerequisites & Environment Setup
-Clone the repository and install requirements:
-```bash
-git clone https://github.com/your-username/Gaza-Building-Damage-AI.git
-cd Gaza-Building-Damage-AI
-
-# Create virtual environment (recommended)
-python -m venv venv
-venv\Scripts\activate   # On Linux/macOS: source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### 2. Environment Variables Configuration
-Copy the sample environment configuration:
-```bash
-cp .env.example .env
-```
-
-### 3. Run the Web Application
-Launch the production FastAPI server:
-```bash
-python api.py
-```
-Open your browser at **http://localhost:8000** to interact with the modern dashboard.
-
-### 4. Run CLI Inference
-```bash
-python predict.py test_image.jpg
-```
-
-### 5. Execute Automated Tests
-Run the complete PyTest test suite:
-```bash
-pytest tests -v
-```
-
 ## License & Ethical Usage
 
 This project is developed for humanitarian aid, civil structural engineering, and disaster management applications.
